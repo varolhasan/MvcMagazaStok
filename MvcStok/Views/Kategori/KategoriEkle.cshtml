@@ -1,0 +1,23 @@
+﻿@model MvcStok.Models.Entity.TBLKATEGORILER
+@{
+    ViewBag.Title = "KategoriEkle";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h3 style="margin-top:30px; margin-left:10px; margin-bottom:30px;"><b>KATEGORİ EKLEME SAYFASI</b></h3>
+
+<form method="post" class="form-group">
+    <div style="margin-top:15px;">
+        <label>Kategori Adı</label>
+        <input type="text" name="KATEGORIAD" class="form-control" required="" placeholder="Kategori giriniz"/>
+        @Html.ValidationMessageFor(x => x.KATEGORIAD, "", new { @style = "color:red" })
+    </div>
+    <div style="margin-top:15px;">
+        <button class="btn btn-primary" id="btn1">Kategori Kaydet</button>
+    </div>
+</form>
+<script>
+        $("#btn1").click(function () {
+            alert("Kategori Ekleme işlemi başarıyla gerçekleşti.")
+        });
+</script>

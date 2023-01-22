@@ -1,0 +1,43 @@
+﻿@model MvcStok.Models.Entity.TBLSATISLAR
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+<div style="margin-top:50px;"> 
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal1">Satış Yap</button>
+</div>
+<div class="modal" id="modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Satış Ekranı</h3>
+            </div>
+            <form method="post" action="/SatisYenisatis">
+                <div class="modal-body">
+                    <div style="margin-top:10px;">
+                        <label>ÜRÜN ADI</label>
+                        @Html.TextBoxFor(x => x.URUN, new { @class = "form-control" })
+                    </div>
+                    <div style="margin-top:10px;">
+                        <label>MÜŞTERİ</label>
+                        @Html.TextBoxFor(x => x.MUSTERI, new { @class = "form-control " })
+                    </div>
+                    <div style="margin-top:10px;">
+                        <label>ADET</label>
+                        @Html.TextBoxFor(x => x.ADET, new { @class = "form-control" })
+                    </div>
+                    <div style="margin-top:10px;">
+                        <label>FİYAT</label>
+                        @Html.TextBoxFor(x => x.FIYAT, new { @class = "form-control " })
+                    </div>
+                    <div style="margin-top:10px;">
+                        <button type="submit" class="btn btn-secondary">Satış İşlemini Yap</button>
+                        <button type="button" data-dismiss="modal" class="btn btn-danger">Satış İşleminden Vazgeç</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

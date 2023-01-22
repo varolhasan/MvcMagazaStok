@@ -1,0 +1,26 @@
+﻿@model MvcStok.Models.Entity.TBLMUSTERILER
+@{
+    ViewBag.Title = "MusteriGetir";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h3 style="margin-top:30px; margin-left:10px; margin-bottom:30px;"><b>MÜŞTERİ GÜNCELLEME SAYFASI</b></h3>
+
+@using (Html.BeginForm("MusteriGuncelle", "Musteri", FormMethod.Post))
+            {
+                <div style="margin-top:15px;">
+                    @Html.LabelFor(x => x.MUSTERIID)
+                    @Html.TextBoxFor(x => x.MUSTERIID, new { @class = "form-control", @readonly = "readonly"})
+                </div>
+                <div style="margin-top:15px;">
+                    @Html.LabelFor(x => x.MUSTERIAD)
+                    @Html.TextBoxFor(x => x.MUSTERIAD, new { @class = "form-control"})
+                </div>
+                <div style="margin-top:15px;">
+                    @Html.LabelFor(x => x.MUSTERISOYAD)
+                    @Html.TextBoxFor(x => x.MUSTERISOYAD, new {@class = "form-control"})
+                </div>
+                <div style="margin-top:15px;">
+                    <button class="btn btn-warning">Müşteri Güncelle</button>
+                </div>
+            }
